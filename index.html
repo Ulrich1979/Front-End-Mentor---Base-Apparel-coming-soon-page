@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+    
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="stylesheet" href="css.css">
+    
+    <title>Frontend Mentor | Base Apparel coming soon page</title>
+
+    <script>
+        function validateForm() {
+            var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+            var icon_validation = document.getElementById("error-icon");
+            let input_text = document.forms["myForm"]["fname"].value;
+            if (input_text == "") {
+                document.getElementById("form-validation").innerHTML = "Mail Address is empty!";
+                icon_validation.style.display = "block";
+                return false;
+                }
+            if (input_text.match(validRegex)) {
+                document.getElementById("form-validation").innerHTML = "Valid email address!";
+                icon_validation.style.display = "none";
+                return true;
+                } else {
+                document.getElementById("form-validation").innerHTML = "Invalid email address!";
+                icon_validation.style.display = "block";
+                return false;
+                }
+            }
+
+    </script>
+
+</head>
+<body>
+
+    <div class="container">
+
+        <main>
+            <img class="logo-desktop-img mb-5" src="images/logo.svg" alt=""> 
+            <h1 class="mb-3"><span>We're</span> coming soon</h1>
+            <p  class="mb-3">Hello fellow shoppers! We're currently building our new fashion store. Add your email below to stay up-to-date with announcements and our launch deals.</p>
+            <form class="submit-form"  name="myForm" onsubmit="return validateForm()" method="post">
+                <input type="text" name="fname" placeholder="Email Address">
+                <img id="error-icon" src="images/icon-error.svg" alt="">
+                <input type="submit" value="">
+            </form>
+            <p id="form-validation"></p>
+        </main>
+    
+        <aside>
+            <img class="logo-mobile-img mb-5" src="images/logo.svg" alt=""> 
+        </aside>
+
+    </div>
+    
+    <footer>
+        <p class="attribution">
+          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+          Coded by <a href="www.kleine-seiten.de">ULRICH CHAUMETTE</a>.
+        </p>
+    </footer>
+    
+</body>
+</html>

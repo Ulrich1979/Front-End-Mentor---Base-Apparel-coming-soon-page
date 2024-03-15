@@ -1,0 +1,163 @@
+/* GENERAL */
+:root {
+    --col-Desaturated-Red: hsl(0, 36%, 70%);
+    --col-Soft-Red: hsl(0, 93%, 68%);
+    --col-Dark-Grayish-Red: hsl(0, 6%, 24%);
+    --col-Pure_White: hsl(0, 0%, 100%);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Josefin Sans", sans-serif;
+}
+
+.mb-5 {
+    margin-bottom: 5rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 4rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: .5rem;
+    color: var(--col-Dark-Grayish-Red);
+}
+
+h1 span {
+    font-weight: 300;
+    color: var(--col-Desaturated-Red);
+}
+
+p {
+    color: var(--col-Desaturated-Red);
+    line-height: 1.5;
+}
+
+/* SECTIONS */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: start;
+}
+
+main {
+    height: 100vh;
+    background-image: url('images/bg-pattern-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 4rem 5vw;
+}
+
+.submit-form {
+    padding-left: 1rem;
+    border: 2px solid var(--col-Desaturated-Red);
+    border-radius: 5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 3rem;
+
+}
+
+.submit-form input {
+    border: none;
+    background: transparent;
+}
+
+.submit-form input[type="text"] {
+    color: var(--col-Dark-Grayish-Red);
+    font-weight: 700;
+    outline: none;
+}
+
+/* .submit-form input[type="text"]:focus-visible {
+    border: 1px solid #f58181;
+    color: var(--col-Dark-Grayish-Red);
+} */
+
+.submit-form input[type="submit"] {
+  width: 5rem;
+  height: 3rem;
+  display: inline;
+  border: none;
+  background: url("images/icon-arrow.svg") 50% 50% no-repeat, linear-gradient(135deg, var(--col-Pure_White), var(--col-Soft-Red));
+  color: var(--col-Pure_White);
+  font-size: 2rem;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+img#error-icon {
+    display: none;
+}
+
+p#form-validation {
+    padding-left: 1rem;
+    color: var(--col-Soft-Red);
+}
+
+aside {
+    background-image: url('images/hero-desktop.jpg');
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 100vh;
+    width: 100%;
+}
+
+img.logo-mobile-img {
+    display: none;
+}
+
+
+p.attribution {
+    font-size: 11px; 
+    text-align: center;
+    color: var(--col-Desaturated-Red);
+}
+
+p.attribution a { 
+    color: var(--col-Desaturated-Red);
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 600px) {
+    .container {
+    flex-direction: column-reverse;
+    }
+    
+    aside {
+    background-image: url('images/hero-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 35vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    img.logo-desktop-img {
+        display: none;
+    }
+    
+    main {
+        text-align: center;
+    }
+    
+    aside {
+        margin-top: 6rem;
+    }
+    
+    img.logo-mobile-img {
+        display: block;
+        margin-top: -4rem;
+        padding-left: 5vw;
+    }
+}
